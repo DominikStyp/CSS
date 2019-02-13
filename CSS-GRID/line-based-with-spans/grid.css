@@ -1,0 +1,54 @@
+
+body {
+    margin: 40px;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, [col] auto);
+    grid-template-rows: repeat(3, auto [row]);
+    background-color: #fff;
+    color: #444;
+}
+
+.box {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+
+}
+
+.a {
+    /* a row span for 2 colums so from gets columns 1 and 2 */
+    grid-column: col / span 2;
+    grid-row: row ;
+}
+.b {
+    /* b row is now from column 3 to the last column */
+    grid-column: col 3 / -1;
+    grid-row: row ;
+}
+.c {
+    /* starts in row 2 and gets 1 column by default */
+    grid-column: col ;
+    grid-row: row 2 ;
+}
+.d {
+    /* starts in row 2, and column 2 and gets 3 columns */
+    grid-column: col 2 / span 3 ;
+    grid-row: row 2 ;
+}
+
+.e {
+    /* starts at row 3 and gets columns from 1 to -1 (last) */
+    grid-column: col 1 / -1;
+    grid-row: row 3;
+}
+.f {
+    /* starts at row 3 and gets columns from 1 to -3 (1 from left, to 3 from right) */
+    grid-column: col 1 / -3;
+    grid-row: row 4;
+}
